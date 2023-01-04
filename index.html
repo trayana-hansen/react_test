@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>HTML Template til React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="rootTwo"></div>
+    <div id="rootThree"></div>
+    <div id="rootFour"></div>
+    <div id="rootFive"></div>
+    <div id="rootSix"></div>
+    <div id="rootSeven"></div>
+    <div id="rootEight"></div>
+    <div id="rootNine"></div>
+    <div id="rootTen"></div>
+    <div id="rootEleven"></div>
+
+    <script type="text/babel">
+      const one = <h2>JSX er godt for maven!</h2>;
+      ReactDOM.render(one, document.getElementById("root"));
+
+      const two = <h2>{10 * 10}</h2>;
+      ReactDOM.render(two, document.getElementById("rootTwo"));
+
+      const three = (
+        <ol>
+          <li>Tapas</li>
+          <li>Pizza</li>
+          <li>Chocolate</li>
+          <li>Olives</li>
+          <li>Chicken Alfredo</li>
+        </ol>
+      );
+      ReactDOM.render(three, document.getElementById("rootThree"));
+
+      const four = (
+        <div>
+          <p>Paragraph One</p>
+          <p>Paragraph Two</p>
+        </div>
+      );
+      ReactDOM.render(four, document.getElementById("rootFour"));
+
+      const five = (
+        <>
+          <p>Paragraph Three</p>
+          <p>Paragraph Five</p>
+        </>
+      );
+      ReactDOM.render(five, document.getElementById("rootFive"));
+
+      const six = (
+        <>
+          <label for="text">Some text</label>
+          <input type="text" name="text" />
+        </>
+      );
+      ReactDOM.render(six, document.getElementById("rootSix"));
+
+      const seven = <section class="mainwrapper">Section</section>;
+      ReactDOM.render(seven, document.getElementById("rootSeven"));
+
+      const time = 10;
+
+      let text = "Godmorgen";
+      if (time > 12) {
+        text = "Goddag";
+      }
+      const eight = <h2>{text}</h2>;
+      ReactDOM.render(eight, document.getElementById("rootEight"));
+
+      const nine = <h2>{time < 12 ? "Godmorgen" : "Goddag"}</h2>;
+      ReactDOM.render(nine, document.getElementById("rootNine"));
+
+      const ten = [one, two, three, four, five, six, seven, eight, nine];
+      ReactDOM.render(ten, document.getElementById("rootTen"));
+    </script>
+  </body>
+</html>
