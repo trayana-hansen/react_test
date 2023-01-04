@@ -20,15 +20,21 @@
 
       const root = ReactDOM.createRoot(document.getElementById("root"));
 
-      const Greeting = (props) => {
+      const food = ["Chocolate", "Gratin", "Chicken Alfredo", "Flan", "Cheese"];
+
+      const FavouriteFood = (props) => {
+        console.log(props);
+
         return (
-          <div>
-            Hello {props.firstname} {props.lastname}
-          </div>
+          <ol>
+            {props.data.map((food) => {
+              return <li>{food}</li>;
+            })}
+          </ol>
         );
       };
 
-      root.render(<Greeting firstname="Tanya" lastname="Hansen" />);
+      root.render(<FavouriteFood data={food} />);
     </script>
   </body>
 </html>
