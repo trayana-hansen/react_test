@@ -27,8 +27,8 @@
 
         return (
           <ol>
-            {props.data.map((food) => {
-              return <li>{food}</li>;
+            {props.data.map((food, key) => {
+              return <li key={key}>{food}</li>;
             })}
           </ol>
         );
