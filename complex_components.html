@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Complex components</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Her skal du indsætte din react kode
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      const ArrStudents = [
+        { id: 1, firstname: "Anna", lastname: "Jensen" },
+        { id: 2, firstname: "Jack", lastname: "Jacobs" },
+        { id: 3, firstname: "Peter", lastname: "Parker" },
+      ];
+
+      const List = (props) => {
+        return <li> Fullname: {`${props.fullname}`}</li>;
+      };
+      const Students = (props) => {
+        return (
+          <ul>
+            {props.students &&
+              props.students.map((item) => {
+                return <List fullname={`${item.firstname} ${item.lastname}`} />;
+              })}
+          </ul>
+        );
+      };
+
+      root.render(<Students students={ArrStudents} />);
+    </script>
+  </body>
+</html>
